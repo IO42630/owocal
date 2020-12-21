@@ -1,0 +1,17 @@
+<mat-table class="lessons-table mat-elevation-z8" [dataSource]="dataSource">
+
+    <ng-container matColumnDef="task">
+        <mat-header-cell *matHeaderCellDef>Task</mat-header-cell>
+        <mat-cell *matCellDef="let cell">{{cell.task}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="prio">
+        <mat-header-cell *matHeaderCellDef>Priority</mat-header-cell>
+        <mat-cell *matCellDef="let cell">{{cell.prio}}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+</mat-table>
