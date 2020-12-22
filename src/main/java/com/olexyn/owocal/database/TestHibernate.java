@@ -21,16 +21,14 @@ public class TestHibernate {
 
 
 
-        CustomerEntity customer = new CustomerEntity();
-        customer.setName("Powell");
+        EventEntity customer = new EventEntity();
+        customer.setSummary("Powell");
 
         session.beginTransaction();
         //Save the Model object
         session.save(customer);
 
         session.getTransaction().commit();
-
-
 
 
         readCustomers(session);
@@ -49,7 +47,7 @@ public class TestHibernate {
         try{
             tx = session.beginTransaction();
 
-            Query query = session.createQuery("from CustomerEntity");
+            Query query = session.createQuery("from EventEntity");
             List list = query.list();
             tx.commit();
             int br=0;
